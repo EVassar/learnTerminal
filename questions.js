@@ -31,22 +31,7 @@ inquirer
         {
             type: 'rawlist',
             name: 'rawlist',
-            message: 'What are your favorite colors?',
-            choices: [
-                'Red',
-                'Blue',
-                'Green',
-                'Orange',
-                'Purple',
-                'Pink',
-                'White',
-                'Black'
-            ]
-        },
-        {
-            type: 'checkbox',
-            name: 'checkbox',
-            message: "What color is your car",
+            message: 'What color is your car?',
             choices: [
                 'Red',
                 'Blue',
@@ -63,7 +48,28 @@ inquirer
                 'Gray',
                 'Black',
                 'other',
-
+            ]
+        },
+        {
+            type: 'checkbox',
+            name: 'checkbox',
+            message: "What are your favorite colors?",
+            choices: [
+                'Red',
+                'Blue',
+                'Green',
+                'Orange',
+                'Purple',
+                'Pink',
+                'White',
+                'Black',
+                'Yellow',
+                'Brown',
+                'Silver',
+                'Pink',
+                'Gray',
+                'Black',
+                'other',
             ]
         },
         {
@@ -101,7 +107,7 @@ inquirer
         },
     ])
     .then(function (answers) {
-        if(answers.confirm === true) {
+     //   if(answers.confirm === true) {
             if (answers.username) {
                 console.log('Username: ' + answers.username);
             }
@@ -116,6 +122,9 @@ inquirer
             }
             else {
                 console.log('My milk has more displacement than your car. :D');
+            }
+            if (answers.confirm === true) {
+                console.log('Forced induction: Yes');
             }
             if (answers.rawlist && answers.rawlist.length > 0) {
                 console.log('Favorite colors: ' + answers.rawlist);
@@ -140,7 +149,7 @@ inquirer
                 console.log('Car: ' + answers.car);
             }
         }
-        else {
-            console.log("Don't care ur slow. (Pshhh pshh noises away)");
-        }
-    });
+        //else {
+        //    console.log("Don't care ur slow. (Pshhh pshh noises away)");
+        //}
+    ,);
